@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Discussionapp</title>
+    <style>
+    .questions{
+    padding: 3%;
+    border: 1px solid silver;
+}
+.rqcontainer{
+    background-color: #f5f6f5;
+    padding: 1.5%;
+    border-bottom: 2px solid whitesmoke;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container-fluid fixed-top" style="background-color: #008080;">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h4>Discussion Portal</h4></a>
+          </div>
+        </nav>
+      </div>
+  </header>
+  <div class="container-fluid row" style="margin-top: 60px;">
+    <div class="col-lg-5 col-sm-12" style="border-right: 1px solid silver; background-color: #f5f6f5;padding-left: 0px;padding-right: 0px;">
+        <div style="padding: 2%;background-color: #fff;">
+            <button onclick="back()" type="button" class="btn btn-primary m-2 d-inline" data-bs-toggle="button" autocomplete="off" aria-pressed="true">New Question form</button>
+            <input id="searchinp" onkeyup="SearchQuestions()" placeholder="search question" type="text" class="form-control d-inline"  style="width: 40%;" >
+        </div>
+        <div style="width: 100%;" id="qholder">
+            <h2 style="display:none;padding-left: 2%;" id="hide">No match found</h2>
+            <!--empty will contain questions-->
+        </div>
+    </div>
+
+    <div class="col-lg-7 col-sm-12" style="display: none;" id="resarea">
+        <div style="padding: 5%;">
+            <div id="holdq">
+            <h4 style="color: grey;">Question</h3>
+            <!--make by script-->
+            <div class="rqcontainer">
+                <h4 id="sh"></h4>
+                <p id="qh"></p>
+            </div>
+            <!--make by script-->
+            </div>
+            <button id="rslbtn" type="button" class="btn btn-primary" style="float: right;margin-top: 10px;">Resolve</button>
+            <div style="margin-bottom:50px;margin-top: 40px;">
+                <h4 style="color: grey;">Response</h3>
+                    <div id="responses">
+                        <div id="responseContainer">
+                          
+                        </div>
+                    </div>
+            </div>
+
+            <div>
+                <h3 style="color: grey;">Add Response</h3>
+                <input id="sname" type="text" class="form-control" style="width:25%; margin-bottom: 10px;" placeholder="Name">
+                <textarea id="scomment" placeholder="Enter Comment" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <button id="sbtn" type="button" class="btn btn-primary" style="float: right; margin-top: 20px;">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-7 col-sm-12" id="qarea">
+        <div style="padding: 5%;">
+        <h2>Welcome to Discussion Portal !</h2>
+        <p>Enter a subject and question to get started</p>
+        <input id="sub" type="text" class="form-control" style="width:30%;" placeholder="Subject">
+        <div class="form-group" style="margin-top: 10px;">
+        <textarea id="ques" placeholder="Question" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+        <button id="btn" type="button" class="btn btn-primary" style="float: right;margin-top:10px;margin-bottom:280px;">Submit</button>
+          </div>
+    </div>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> 
+</body>
+</html>
